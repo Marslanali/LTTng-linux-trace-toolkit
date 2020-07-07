@@ -41,8 +41,8 @@ Create the tracepoint provider header file, which defines the tracepoints and th
 
 
 ```
-mkidr ~/lttng-user-app-traces
-cd lttng-user-app-traces
+mkidr ~/lttng-linux-trace-toolkit
+cd lttng-linux-trace-toolkit
 vim hello-tp.h
 ```
 
@@ -82,7 +82,7 @@ TRACEPOINT_EVENT(
 #### Create the tracepoint provider package source file:
 
 ```
-cd lttng-user-app-traces
+cd lttng-linux-trace-toolkit
 vim hello-tp.c
 ```
 Copy the following code into `hello-tp.c`, and save it.
@@ -108,9 +108,8 @@ sudo gcc -c -I /usr/src/lttng-modules-2.12.x+stable+git1320+202007022118~ubuntu1
 
 
 ```
-cd lttng-user-app-traces
+cd lttng-linux-trace-toolkit
 vim hello.c
-
 ```
 Copy the following code into `hello.c`, and save it.
 
