@@ -1,7 +1,6 @@
 # lttng-linux-trace-toolkit
 Trace the Linux kernel, user applications using LTTng. 
 
-
 ### Installation LTTNG
 
 **On Debian and Ubuntu:**
@@ -199,7 +198,6 @@ Run the application with a few arguments:
 
 ```
 ./hello world and beyond
-
 ```
 
 You will see following on your terminal:
@@ -207,7 +205,6 @@ You will see following on your terminal:
 ```
 Hello, World!
 Press Enter to continue...
-
 ```
 
 Open new terminal, and leave current terminal to be open.
@@ -219,7 +216,6 @@ Open new terminal, and leave current terminal to be open.
 
 ```
 lttng-sessiond --daemonize
-
 ```
 
 
@@ -240,7 +236,6 @@ You see the `hello_world:my_first_tracepoint` tracepoint listed under the `./hel
 
 ```
 lttng create my-user-space-session
-
 ```
 
 ### Step: 5
@@ -249,7 +244,6 @@ lttng create my-user-space-session
 
 ```
 lttng enable-event --userspace hello_world:my_first_tracepoint
-
 ```
 
 ### Step: 6
@@ -258,7 +252,6 @@ lttng enable-event --userspace hello_world:my_first_tracepoint
 
 ```
 lttng start
-
 ```
 
 Go back to the running hello application and press Enter. The program executes all tracepoint() instrumentation points and exits.
@@ -269,7 +262,6 @@ Go back to the running hello application and press Enter. The program executes a
 
 ```
 lttng destroy
-
 ```
 
 
@@ -279,9 +271,7 @@ Use the babeltrace2 command-line tool
 The simplest way to list all the recorded events of an LTTng trace is to pass its path to babeltrace2 without options:
 
 ```
-
 babeltrace2 ~/lttng-traces/my-user-space-session*
-
 ```
 
 Here is the output on terminal:
@@ -295,7 +285,6 @@ arslan@arslan-HP-ProBook-450-G5:~/arslan-data/software-development/new-tools$ ba
 [12:51:30.604666550] (+0.000000311) arslan-HP-ProBook-450-G5 hello_world:my_first_tracepoint: { cpu_id = 2 }, { my_string_field = "and", my_integer_field = 2 }
 [12:51:30.604666851] (+0.000000301) arslan-HP-ProBook-450-G5 hello_world:my_first_tracepoint: { cpu_id = 2 }, { my_string_field = "beyond", my_integer_field = 3 }
 [12:51:30.604675714] (+0.000008863) arslan-HP-ProBook-450-G5 hello_world:my_first_tracepoint: { cpu_id = 2 }, { my_string_field = "x^2", my_integer_field = 16 }
-
 
 ```
 
