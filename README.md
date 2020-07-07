@@ -12,7 +12,6 @@ Trace the Linux kernel, user applications using LTTng.
 sudo apt-add-repository ppa:lttng/stable-2.10
 sudo apt update
 sudo apt install lttng-modules-dkms lttng-tools python3-lttnganalyses
-
 ```
 
 
@@ -29,7 +28,6 @@ Babeltrace 2: A rich, flexible trace manipulation toolkit which includes a versa
 apt-add-repository ppa:lttng/ppa
 apt-get update
 apt-get install babeltrace2
-
 ```
 
 
@@ -46,7 +44,6 @@ Create the tracepoint provider header file, which defines the tracepoints and th
 mkidr ~/lttng-user-app-traces
 cd lttng-user-app-traces
 vim hello-tp.h
-
 ```
 
 Copy the following code into `hello-tp.h`, and save it.
@@ -79,7 +76,6 @@ TRACEPOINT_EVENT(
 #endif /* _HELLO_TP_H */
 
 #include <lttng/tracepoint-event.h>
-
 ```
 
 ### Step 2: 
@@ -88,7 +84,6 @@ TRACEPOINT_EVENT(
 ```
 cd lttng-user-app-traces
 vim hello-tp.c
-
 ```
 Copy the following code into `hello-tp.c`, and save it.
 
@@ -97,7 +92,6 @@ Copy the following code into `hello-tp.c`, and save it.
 #define TRACEPOINT_DEFINE
 
 #include "hello-tp.h"
-
 ```
 
 ### Step 3
@@ -106,8 +100,6 @@ Copy the following code into `hello-tp.c`, and save it.
 
 ```
 sudo gcc -c -I /usr/src/lttng-modules-2.12.x+stable+git1320+202007022118~ubuntu16.04.1 hello-tp.c -I /home/arslan/lttng-user-app-traces 
-
-
 ```
 
 ### Step 4
@@ -120,7 +112,6 @@ cd lttng-user-app-traces
 vim hello.c
 
 ```
-
 Copy the following code into `hello.c`, and save it.
 
 ```
@@ -166,7 +157,6 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
 ```
 
 
@@ -176,7 +166,6 @@ int main(int argc, char *argv[])
 
 ```
 gcc -c hello.c
-
 ```
 
 
@@ -186,7 +175,6 @@ gcc -c hello.c
 
 ```
 gcc -o hello hello.o hello-tp.o -llttng-ust -ldl
-
 ```
 
 
@@ -217,8 +205,6 @@ Open new terminal, and leave current terminal to be open.
 ```
 lttng-sessiond --daemonize
 ```
-
-
 
 ### Step: 3
 
