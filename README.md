@@ -1,4 +1,4 @@
-# lttng-linux-trace-toolkit
+# LTTng-linux-trace-toolkit
 Trace the Linux kernel, user applications using LTTng. 
 
 ### Installation LTTNG
